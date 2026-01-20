@@ -51,7 +51,7 @@ export function StackDisplay({ stack, highlightedIndex }: StackDisplayProps) {
 	const cameraHeight = stack.length > 8 ? 0 : Math.max(6, 4 + stack.length * 0.5)
 	
 	return (
-		<div className="relative h-full min-h-[600px] w-full bg-gradient-to-b from-card via-card to-secondary/10 rounded-xl overflow-hidden border-2 border-primary/10 shadow-xl">
+		<div className="relative h-full min-h-[350px] sm:min-h-[600px] w-full bg-gradient-to-b from-card via-card to-secondary/10 rounded-xl overflow-hidden border-2 border-primary/10 shadow-xl">
 			<BaseScene3D 
 				showSparkles={stack.length > 0}
 				cameraPosition={[0, cameraHeight, cameraDistance]}

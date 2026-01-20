@@ -45,7 +45,7 @@ export function DijkstraDisplay({
   }
 
   return (
-    <div className="h-[600px] bg-card rounded-lg overflow-hidden">
+    <div className="h-[350px] sm:h-[600px] bg-card rounded-lg overflow-hidden">
       <BaseScene3D>
         {/* Edges */}
         {graph.edges.map(edge => {

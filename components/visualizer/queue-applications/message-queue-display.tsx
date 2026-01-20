@@ -32,9 +32,9 @@ function MessageCard({ message }: { message: Message }) {
       exit={{ opacity: 0, y: -20 }}
       className={`p-4 rounded-lg ${getStatusColor()} transition-colors`}
     >
-      <div className="flex justify-between items-start gap-4">
-        <div className="flex-1">
-          <p className="font-mono text-sm">{message.content}</p>
+      <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
+        <div className="min-w-0 flex-1">
+          <p className="font-mono text-sm break-words">{message.content}</p>
           <p className="text-xs text-muted-foreground mt-1">
             {formatDistanceToNow(message.timestamp, { addSuffix: true })}
           </p>
@@ -56,9 +56,9 @@ export function MessageQueueDisplay({ queue, processed, consumers }: MessageQueu
       {/* Queue Section */}
       <Card>
 				<CardHeader>
-					<div className="flex justify-between items-center">
-						<CardTitle className="text-lg">{t('messageQueue.title')}</CardTitle>
-						<span className="text-sm text-muted-foreground">
+					<div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
+						<CardTitle className="text-base sm:text-lg">{t('messageQueue.title')}</CardTitle>
+						<span className="text-xs sm:text-sm text-muted-foreground">
 							{t('messageQueue.messagesWaiting', { count: queue.length })}
 						</span>
 					</div>
@@ -78,7 +78,7 @@ export function MessageQueueDisplay({ queue, processed, consumers }: MessageQueu
 			{activeConsumers > 0 && (
 				<Card>
 					<CardHeader>
-						<CardTitle className="text-lg">{t('messageQueue.currentlyProcessing')}</CardTitle>
+						<CardTitle className="text-base sm:text-lg">{t('messageQueue.currentlyProcessing')}</CardTitle>
 					</CardHeader>
 					<CardContent>
 						<div className="space-y-2">
@@ -100,9 +100,9 @@ export function MessageQueueDisplay({ queue, processed, consumers }: MessageQueu
 			{processed.length > 0 && (
 				<Card>
 					<CardHeader>
-						<div className="flex justify-between items-center">
-							<CardTitle className="text-lg">{t('messageQueue.processedMessages')}</CardTitle>
-							<span className="text-sm text-muted-foreground">
+						<div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
+							<CardTitle className="text-base sm:text-lg">{t('messageQueue.processedMessages')}</CardTitle>
+							<span className="text-xs sm:text-sm text-muted-foreground">
 								{t('messageQueue.completed', { count: processed.length })}
 							</span>
 						</div>

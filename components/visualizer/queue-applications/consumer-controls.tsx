@@ -28,14 +28,14 @@ export function ConsumerControls({ consumers, onProcess, queueSize }: ConsumerCo
 							variant="outline"
 							onClick={() => onProcess(consumer.id)}
 							disabled={consumer.isProcessing || queueSize === 0}
-							className="relative w-full"
+							className="relative w-full text-left"
 						>
-							<div className="flex items-center justify-between w-full">
-								<span>{t('messageQueue.consumerLabel', { index: index + 1 })}</span>
+							<div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between w-full">
+								<span className="min-w-0 break-words">{t('messageQueue.consumerLabel', { index: index + 1 })}</span>
 								{consumer.isProcessing ? (
 									<Loader2 className="h-4 w-4 animate-spin" />
 								) : (
-									<span className="bg-primary/10 text-primary text-xs px-2 py-0.5 rounded-full">
+									<span className="bg-primary/10 text-primary text-xs px-2 py-0.5 rounded-full w-fit">
 										{t('messageQueue.processed', { count: consumer.processedCount })}
 									</span>
 								)}

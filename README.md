@@ -68,6 +68,29 @@ npm run dev
 
 1. Abrir [http://localhost:3000](http://localhost:3000)
 
+## Despliegue con Docker (Cloud Run)
+
+Este proyecto usa `output: "export"` en `next.config.ts`, por lo que el build genera un sitio estático en `out/`. El contenedor sirve ese contenido con Nginx en el puerto `8080` (requerido por Cloud Run). No requiere variables de entorno.
+
+1. Build de imagen:
+
+```bash
+docker build -t estructuradatos-org .
+```
+
+1. Probar localmente:
+
+```bash
+docker run --rm -p 8080:8080 estructuradatos-org
+```
+
+1. Abrir [http://localhost:8080](http://localhost:8080)
+
+Archivos relevantes:
+- `Dockerfile`
+- `nginx.conf`
+- `.dockerignore`
+
 ## Internacionalización (i18n)
 
 - Español e inglés listos de fábrica.

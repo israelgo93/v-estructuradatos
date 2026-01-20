@@ -40,14 +40,16 @@ export function LinkedListVisualizer({ content }: LinkedListVisualizerProps) {
       </div>
 
       <Tabs defaultValue="SLL" className="w-full space-y-6">
-        <TabsList className="grid w-full grid-cols-5">
-          {LIST_TYPES.map(type => (
-            <TabsTrigger key={type.value} value={type.value}>
-              {type.label}
-            </TabsTrigger>
-          ))}
-          <TabsTrigger value="explanation">{t('common.explanation')}</TabsTrigger>
-        </TabsList>
+        <div className="overflow-x-auto pb-2">
+          <TabsList className="flex w-full min-w-max gap-2 sm:grid sm:grid-cols-5 sm:gap-0 h-auto p-1 sm:h-10 sm:p-1">
+            {LIST_TYPES.map(type => (
+              <TabsTrigger key={type.value} value={type.value} className="shrink-0">
+                {type.label}
+              </TabsTrigger>
+            ))}
+            <TabsTrigger value="explanation" className="shrink-0">{t('common.explanation')}</TabsTrigger>
+          </TabsList>
+        </div>
 
         {LIST_TYPES.map(type => (
           <TabsContent key={type.value} value={type.value} className="space-y-6">
@@ -78,7 +80,14 @@ function LinkedListContent({ type }: { type: ListType }) {
 
   return (
     <div className="grid grid-cols-1 xl:grid-cols-3 gap-6">
-      <div className="xl:col-span-1 space-y-6">
+      <div className="xl:col-span-2 order-1 xl:order-2">
+        <LinkedListDisplay 
+          list={list}
+          highlightedNodes={animationState.highlightedNodes}
+          message={animationState.message}
+        />
+      </div>
+      <div className="xl:col-span-1 space-y-6 order-2 xl:order-1">
         <LinkedListControls 
           onInsertFront={insertFront}
           onInsertBack={insertBack}
@@ -89,13 +98,6 @@ function LinkedListContent({ type }: { type: ListType }) {
           isEmpty={!list.head}
         />
         <LinkedListOperations operations={operations} />
-      </div>
-      <div className="xl:col-span-2">
-        <LinkedListDisplay 
-          list={list}
-          highlightedNodes={animationState.highlightedNodes}
-          message={animationState.message}
-        />
       </div>
     </div>
   )

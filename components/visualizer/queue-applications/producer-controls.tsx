@@ -30,7 +30,7 @@ export function ProducerControls({ producers, onProduce }: ProducerControlsProps
 				<CardTitle className="text-lg">{t('messageQueue.producers')}</CardTitle>
 			</CardHeader>
 			<CardContent className="space-y-4">
-				<div className="grid grid-cols-2 gap-2">
+				<div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
 					{producers.map((producer, index) => (
 						<Button
 							key={producer.id}
@@ -46,14 +46,14 @@ export function ProducerControls({ producers, onProduce }: ProducerControlsProps
 					))}
 				</div>
 
-				<div className="flex gap-2">
+				<div className="flex flex-col gap-2 sm:flex-row">
 					<Input
 						value={message}
 						onChange={(e) => setMessage(e.target.value)}
 						placeholder={t('messageQueue.enterMessage')}
 						onKeyDown={(e) => e.key === 'Enter' && handleProduce()}
 					/>
-					<Button onClick={handleProduce}>
+					<Button onClick={handleProduce} className="w-full sm:w-auto">
 						{t('messageQueue.send')}
 					</Button>
 				</div>

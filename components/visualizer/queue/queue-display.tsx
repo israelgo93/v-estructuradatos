@@ -55,7 +55,7 @@ export function QueueDisplay({ queue, highlightedIndex }: QueueDisplayProps) {
 	const trackWidth = Math.max(22, totalWidth + 6)
 
 	return (
-		<div className="relative h-[600px] w-full bg-gradient-to-b from-card via-card to-secondary/10 rounded-xl overflow-hidden border-2 border-primary/10 shadow-xl">
+		<div className="relative h-[350px] sm:h-[600px] w-full bg-gradient-to-b from-card via-card to-secondary/10 rounded-xl overflow-hidden border-2 border-primary/10 shadow-xl">
 			<BaseScene3D showSparkles={queue.length > 0} cameraPosition={[0, cameraY, cameraZ]}>
 				{/* Pista principal de la cola */}
 				<mesh position={[0, -0.9, 0]} receiveShadow>

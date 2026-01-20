@@ -78,14 +78,22 @@ export function StackVisualizer({ content }: StackVisualizerProps) {
       </div>
 
       <Tabs defaultValue="visualization" className="w-full space-y-6">
-        <TabsList className="grid w-full grid-cols-2">
-          <TabsTrigger value="visualization">{t('common.visualization')}</TabsTrigger>
-          <TabsTrigger value="explanation">{t('common.explanation')}</TabsTrigger>
-        </TabsList>
+        <div className="overflow-x-auto pb-2">
+          <TabsList className="flex w-full min-w-max sm:grid sm:grid-cols-2 h-auto p-1 sm:h-10 sm:p-1">
+            <TabsTrigger value="visualization" className="flex-1">{t('common.visualization')}</TabsTrigger>
+            <TabsTrigger value="explanation" className="flex-1">{t('common.explanation')}</TabsTrigger>
+          </TabsList>
+        </div>
         
         <TabsContent value="visualization" className="space-y-6">
           <div className="grid grid-cols-1 xl:grid-cols-3 gap-6">
-            <div className="xl:col-span-1 space-y-4">
+            <div className="xl:col-span-2 order-1 xl:order-2">
+              <StackDisplay 
+                stack={stack}
+                highlightedIndex={highlightedIndex}
+              />
+            </div>
+            <div className="xl:col-span-1 space-y-4 order-2 xl:order-1">
               <StackControls 
                 onPush={push}
                 onPop={pop}
@@ -99,12 +107,6 @@ export function StackVisualizer({ content }: StackVisualizerProps) {
                 isAnimating={isAnimating}
               />
               <StackOperations operations={operations} />
-            </div>
-            <div className="xl:col-span-2">
-              <StackDisplay 
-                stack={stack}
-                highlightedIndex={highlightedIndex}
-              />
             </div>
           </div>
         </TabsContent>

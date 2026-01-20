@@ -125,7 +125,7 @@ export function BinaryTreeDisplay({ tree, highlightedNodes }: BinaryTreeDisplayP
   }
 
   return (
-    <div className="w-full h-[600px] bg-gradient-to-b from-card via-card to-secondary/10 rounded-xl overflow-hidden border-2 border-primary/10 shadow-xl">
+    <div className="w-full h-[350px] sm:h-[600px] bg-gradient-to-b from-card via-card to-secondary/10 rounded-xl overflow-hidden border-2 border-primary/10 shadow-xl">
       <BaseScene3D cameraPosition={[0, treeMetrics.cameraY, treeMetrics.cameraZ]}>
         {tree ? (
           renderTree(tree)

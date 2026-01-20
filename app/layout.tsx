@@ -8,7 +8,7 @@ import { Footer } from "@/components/global/footer";
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: "EstructuraDatos.org",
+  title: "estructuradatos.org",
   description: "Organización tecnológica sin fines de lucro con recursos open source para aprender programación y estructuras de datos.",
 };
 

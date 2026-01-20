@@ -59,15 +59,23 @@ export function AVLTreeVisualizer({ content }: AVLTreeVisualizerProps) {
       </div>
 
       <Tabs defaultValue="visualization" className="w-full space-y-6">
-        <TabsList className="grid w-full grid-cols-3">
-          <TabsTrigger value="visualization">{t('common.visualization')}</TabsTrigger>
-          <TabsTrigger value="analysis">{t('common.analysis')}</TabsTrigger>
-          <TabsTrigger value="explanation">{t('common.explanation')}</TabsTrigger>
-        </TabsList>
+        <div className="overflow-x-auto pb-2">
+          <TabsList className="flex w-full min-w-max sm:grid sm:grid-cols-3 h-auto p-1 sm:h-10 sm:p-1">
+            <TabsTrigger value="visualization" className="flex-1">{t('common.visualization')}</TabsTrigger>
+            <TabsTrigger value="analysis" className="flex-1">{t('common.analysis')}</TabsTrigger>
+            <TabsTrigger value="explanation" className="flex-1">{t('common.explanation')}</TabsTrigger>
+          </TabsList>
+        </div>
         
         <TabsContent value="visualization" className="space-y-6">
           <div className="grid grid-cols-1 xl:grid-cols-3 gap-6">
-            <div className="xl:col-span-1 space-y-6">
+            <div className="xl:col-span-2 order-1 xl:order-2">
+              <AVLTreeDisplay 
+                tree={tree}
+                highlightedNodes={highlightedNodes}
+              />
+            </div>
+            <div className="xl:col-span-1 space-y-6 order-2 xl:order-1">
               <AVLTreeControls 
                 onInsert={insert}
                 onClear={clear}
@@ -75,12 +83,6 @@ export function AVLTreeVisualizer({ content }: AVLTreeVisualizerProps) {
                 isAnimating={isAnimating}
                 traversalHistory={traversalHistory}
                 rotationHistory={rotationHistory}
-              />
-            </div>
-            <div className="xl:col-span-2">
-              <AVLTreeDisplay 
-                tree={tree}
-                highlightedNodes={highlightedNodes}
               />
             </div>
           </div>

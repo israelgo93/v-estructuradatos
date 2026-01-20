@@ -121,6 +121,25 @@ Fecha: 20 de Enero de 2026
 - Se optimizó el renderizado de la landing page para carga del lado del cliente.
 - Se corrigió un mismatch de hidratación por i18n al cargar traducciones locales.
 
+### 10. Responsividad y UX en Visualizadores (UI/UX)
+
+- Se reordenaron los paneles para priorizar la visualización 3D en móviles.
+- Tabs con scroll horizontal para evitar cortes en pantallas pequeñas.
+- Ajustes de layout en Message Queue para evitar desbordes y mejorar lectura.
+- Contenedores de explicaciones con mejor wrapping y códigos con scroll horizontal.
+- Alturas mínimas de escenas 3D ajustadas para móviles sin perder interacción.
+
+### 11. i18n - Placeholders corregidos
+
+- Se normalizaron placeholders a `{{variable}}` en ES/EN para evitar valores sin interpolar.
+- Ejemplos corregidos: `{count}`, `{index}`, `{value}`, `{size}`, `{from}`, `{to}`.
+
+### 12. Docker y Cloud Run
+
+- Se creó `Dockerfile` orientado a despliegue en Cloud Run usando export estático.
+- Se agregó `nginx.conf` para servir `out/` en el puerto 8080.
+- Se añadió `.dockerignore` para reducir tamaño de build.
+
 ## Estructura de Datos Disponibles
 
 ### Estructuras de Datos
@@ -166,6 +185,6 @@ Incluyen traducciones para:
 ## Próximos Pasos Sugeridos
 
 - Agregar más gestos para otras estructuras de datos en la aplicación de visión artificial.
-- Implementar escalado dinámico en Queue y LinkedList similar al Stack.
+- Validar despliegue en Cloud Run y ajustar cachés si es necesario.
 - Optimizar el build para producción (actualmente hay timeouts en SSG).
 - Agregar más quizzes y ejercicios interactivos.

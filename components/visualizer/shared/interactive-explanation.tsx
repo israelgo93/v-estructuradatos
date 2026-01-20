@@ -129,7 +129,7 @@ export function InteractiveExplanation({ data, className = "" }: InteractiveExpl
 		<div className={`space-y-6 ${className}`}>
 			{/* Header */}
 			<div className="mb-6">
-				<h2 className="text-2xl font-bold flex items-center gap-2">
+				<h2 className="text-2xl font-bold flex flex-wrap items-center gap-2">
 					<BookOpen className="h-6 w-6 text-primary" />
 					{isSpanish ? data.titleEs : data.title}
 				</h2>
@@ -152,13 +152,13 @@ export function InteractiveExplanation({ data, className = "" }: InteractiveExpl
 						<Card key={concept.id} className="overflow-hidden">
 							<button
 								onClick={() => toggleSection(concept.id)}
-								className="w-full p-4 flex items-center justify-between hover:bg-secondary/50 transition-colors"
+								className="w-full p-4 flex items-center justify-between gap-3 text-left hover:bg-secondary/50 transition-colors"
 							>
-								<div className="flex items-center gap-3">
+								<div className="flex items-center gap-3 min-w-0">
 									<div className={`p-2 rounded-lg ${isExpanded ? 'bg-primary/10' : 'bg-secondary'}`}>
 										<Code2 className={`h-4 w-4 ${isExpanded ? 'text-primary' : 'text-muted-foreground'}`} />
 									</div>
-									<span className="font-medium">
+									<span className="font-medium break-words">
 										{isSpanish ? concept.titleEs : concept.title}
 									</span>
 								</div>
@@ -177,13 +177,13 @@ export function InteractiveExplanation({ data, className = "" }: InteractiveExpl
 										exit={{ height: 0, opacity: 0 }}
 										transition={{ duration: 0.2 }}
 									>
-										<CardContent className="pt-0 pb-4 px-4 space-y-4">
+									<CardContent className="pt-0 pb-4 px-4 space-y-4">
 											<p className="text-sm text-muted-foreground leading-relaxed">
 												{isSpanish ? concept.contentEs : concept.content}
 											</p>
 
 											{concept.code && (
-												<pre className="bg-slate-900 text-slate-100 p-4 rounded-lg text-sm font-mono overflow-x-auto">
+											<pre className="bg-slate-900 text-slate-100 p-4 rounded-lg text-sm font-mono overflow-x-auto max-w-full">
 													<code>{concept.code}</code>
 												</pre>
 											)}
@@ -317,11 +317,11 @@ export function InteractiveExplanation({ data, className = "" }: InteractiveExpl
 						{!quizState.showResults ? (
 							<>
 								<CardHeader className="bg-primary/5">
-									<div className="flex items-center justify-between">
+									<div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
 										<CardTitle className="text-base">
 											{isSpanish ? "Pregunta" : "Question"} {quizState.currentQuestion + 1}/{data.quiz.length}
 										</CardTitle>
-										<Badge variant="outline">
+										<Badge variant="outline" className="w-fit">
 											{correctAnswers}/{data.quiz.length} {isSpanish ? "correctas" : "correct"}
 										</Badge>
 									</div>

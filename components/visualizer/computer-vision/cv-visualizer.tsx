@@ -457,22 +457,33 @@ export function CVVisualizer() {
 			{/* Structure Selector */}
 			<div className="mb-6">
 				<Tabs value={selectedStructure} onValueChange={(v) => setSelectedStructure(v as DataStructureType)}>
-					<TabsList className="grid w-full max-w-md grid-cols-2">
-						<TabsTrigger value="stack" className="gap-2">
-							<Layers className="h-4 w-4" />
-							{isSpanish ? "Pila (Stack)" : "Stack"}
-						</TabsTrigger>
-						<TabsTrigger value="queue" className="gap-2">
-							<ArrowRight className="h-4 w-4" />
-							{isSpanish ? "Cola (Queue)" : "Queue"}
-						</TabsTrigger>
-					</TabsList>
+					<div className="overflow-x-auto pb-2">
+						<TabsList className="flex w-full min-w-max sm:grid sm:grid-cols-2 h-auto p-1 sm:h-10 sm:p-1 max-w-md">
+							<TabsTrigger value="stack" className="gap-2 flex-1">
+								<Layers className="h-4 w-4" />
+								{isSpanish ? "Pila (Stack)" : "Stack"}
+							</TabsTrigger>
+							<TabsTrigger value="queue" className="gap-2 flex-1">
+								<ArrowRight className="h-4 w-4" />
+								{isSpanish ? "Cola (Queue)" : "Queue"}
+							</TabsTrigger>
+						</TabsList>
+					</div>
 				</Tabs>
 			</div>
 
 			<div className="grid grid-cols-1 xl:grid-cols-5 gap-6">
+				{/* Panel de Visualización 3D */}
+				<div className="xl:col-span-3 min-h-[600px] order-1 xl:order-2">
+					{selectedStructure === "stack" ? (
+						<StackDisplay stack={stackHook.stack} highlightedIndex={stackHook.highlightedIndex} />
+					) : (
+						<QueueDisplay queue={queueHook.queue} highlightedIndex={queueHook.highlightedIndex} />
+					)}
+				</div>
+
 				{/* Panel de Cámara */}
-				<div className="xl:col-span-2 space-y-4">
+				<div className="xl:col-span-2 space-y-4 order-2 xl:order-1">
 					<Card className="overflow-hidden border-2 border-primary/20 shadow-xl">
 						<div className="relative aspect-[4/3] bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
 							{isLoading && (

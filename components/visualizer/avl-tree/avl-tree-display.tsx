@@ -82,7 +82,7 @@ export function AVLTreeDisplay({ tree, highlightedNodes }: AVLTreeDisplayProps) 
   }
 
   return (
-    <div className="w-full h-[600px] bg-card rounded-lg overflow-hidden">
+    <div className="w-full h-[350px] sm:h-[600px] bg-card rounded-lg overflow-hidden">
       <BaseScene3D>
         {tree && renderTree(tree)}
       </BaseScene3D>

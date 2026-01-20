@@ -88,7 +88,7 @@ export function BaseScene3D({
 	cameraPosition = [0, 5, 10] 
 }: BaseScene3DProps) {
 	return (
-		<div className="w-full h-full min-h-[500px] bg-gradient-to-b from-background via-background to-secondary/10 rounded-xl overflow-hidden border shadow-inner cursor-grab active:cursor-grabbing">
+		<div className="w-full h-full min-h-[350px] sm:min-h-[500px] bg-gradient-to-b from-background via-background to-secondary/10 rounded-xl overflow-hidden border shadow-inner cursor-grab active:cursor-grabbing">
 			<Canvas shadows dpr={[1, 2]} gl={{ antialias: true }}>
 				<PerspectiveCamera makeDefault position={cameraPosition} fov={50} />
 				<OrbitControls 

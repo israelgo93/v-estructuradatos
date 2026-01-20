@@ -55,15 +55,26 @@ export function DijkstraVisualizer({ content }: DijkstraVisualizerProps) {
       </div>
 
       <Tabs defaultValue="visualization" className="w-full space-y-6">
-        <TabsList className="grid w-full grid-cols-3">
-          <TabsTrigger value="visualization">{t('common.visualization')}</TabsTrigger>
-          <TabsTrigger value="analysis">{t('common.analysis')}</TabsTrigger>
-          <TabsTrigger value="explanation">{t('common.explanation')}</TabsTrigger>
-        </TabsList>
+        <div className="overflow-x-auto pb-2">
+          <TabsList className="flex w-full min-w-max sm:grid sm:grid-cols-3 h-auto p-1 sm:h-10 sm:p-1">
+            <TabsTrigger value="visualization" className="flex-1">{t('common.visualization')}</TabsTrigger>
+            <TabsTrigger value="analysis" className="flex-1">{t('common.analysis')}</TabsTrigger>
+            <TabsTrigger value="explanation" className="flex-1">{t('common.explanation')}</TabsTrigger>
+          </TabsList>
+        </div>
         
         <TabsContent value="visualization" className="space-y-6">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
-            <div className="lg:col-span-2">
+            <div className="lg:col-span-3 order-1 lg:order-2">
+              <DijkstraDisplay
+                graph={graph}
+                distances={distances}
+                path={path}
+                currentNode={currentNode}
+                visitedNodes={visitedNodes}
+              />
+            </div>
+            <div className="lg:col-span-2 order-2 lg:order-1">
               <DijkstraControls
                 onAddNode={addNode}
                 onAddEdge={addEdge}
@@ -83,15 +94,6 @@ export function DijkstraVisualizer({ content }: DijkstraVisualizerProps) {
                 distances={distances}
                 onAutoPlay={toggleAutoPlay}
                 isAutoPlaying={isAutoPlaying}
-              />
-            </div>
-            <div className="lg:col-span-3">
-              <DijkstraDisplay
-                graph={graph}
-                distances={distances}
-                path={path}
-                currentNode={currentNode}
-                visitedNodes={visitedNodes}
               />
             </div>
           </div>

@@ -82,7 +82,7 @@ export function HeapDisplay({ heap, highlightedNodes }: HeapDisplayProps) {
   }
 
   return (
-    <div className="w-full h-[600px] bg-card rounded-lg overflow-hidden">
+    <div className="w-full h-[350px] sm:h-[600px] bg-card rounded-lg overflow-hidden">
       <BaseScene3D>
         {heap && renderHeap(heap)}
       </BaseScene3D>

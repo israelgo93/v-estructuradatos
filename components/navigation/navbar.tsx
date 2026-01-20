@@ -4,6 +4,7 @@ import React from "react";
 import {
 	Sheet,
 	SheetContent,
+	SheetDescription,
 	SheetFooter,
 	SheetHeader,
 	SheetTitle,
@@ -126,10 +127,11 @@ export const Navbar = () => {
 	const menuItems = isVisualizerLanding ? visualizerFeatures : orgProjects;
 
 	return (
-		<header className="shadow-inner bg-opacity-15 w-[90%] md:w-[70%] lg:w-[75%] lg:max-w-screen-xl top-5 mx-auto sticky border border-secondary z-40 rounded-2xl flex justify-between items-center p-2 bg-card/60 backdrop-blur-md">
-			<Link href="/" className="font-bold text-lg flex items-center">
-				<BrainCircuit className="h-6 w-6 mr-2" />
-				{t('common.title')}
+		<header className="shadow-inner bg-opacity-15 w-[95%] sm:w-[90%] md:w-[70%] lg:w-[75%] lg:max-w-screen-xl top-5 mx-auto sticky border border-secondary z-40 rounded-2xl flex justify-between items-center p-2 bg-card/60 backdrop-blur-md">
+			<Link href="/" className="font-bold text-base sm:text-lg flex items-center shrink-0">
+				<BrainCircuit className="h-5 w-5 sm:h-6 sm:w-6 mr-2" />
+				<span className="hidden sm:inline-block">{t('common.title')}</span>
+				<span className="sm:hidden">ed.org</span>
 			</Link>
 
 			{/* Mobile Menu */}
@@ -146,6 +148,7 @@ export const Navbar = () => {
 						side="left"
 						className="flex flex-col justify-between rounded-tr-2xl rounded-br-2xl bg-card border-secondary"
 					>
+						<SheetDescription className="sr-only">Navegación principal del sitio</SheetDescription>
 						<div>
 							<SheetHeader className="mb-4 ml-4">
 								<SheetTitle className="flex items-center">
@@ -183,43 +186,47 @@ export const Navbar = () => {
 			</div>
 
 			{/* Desktop Menu */}
-			<NavigationMenu className="hidden lg:block mx-auto">
-				<NavigationMenuList>
-					<NavigationMenuItem>
-						<NavigationMenuTrigger className="bg-transparent">
-							{menuLabel}
-						</NavigationMenuTrigger>
-						<NavigationMenuContent>
-							<ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2">
-								{menuItems.map(({ title, description, url }) => (
-									<NavigationMenuLink key={title} asChild>
-										<Link href={url}>
-											<li key={title} className="rounded-md p-3 hover:bg-muted">
-												<p className="mb-1 font-semibold leading-none text-foreground">
-													{title}
-												</p>
-												<p className="line-clamp-2 text-muted-foreground">
-													{description}
-												</p>
-											</li>
+			<div className="hidden lg:flex items-center justify-center flex-1 mx-4">
+				<NavigationMenu>
+					<NavigationMenuList>
+						<NavigationMenuItem>
+							<NavigationMenuTrigger className="bg-transparent">
+								{menuLabel}
+							</NavigationMenuTrigger>
+							<NavigationMenuContent>
+								<ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2">
+									{menuItems.map(({ title, description, url }) => (
+										<NavigationMenuLink key={title} asChild>
+											<Link href={url}>
+												<li key={title} className="rounded-md p-3 hover:bg-muted">
+													<p className="mb-1 font-semibold leading-none text-foreground">
+														{title}
+													</p>
+													<p className="line-clamp-2 text-muted-foreground">
+														{description}
+													</p>
+												</li>
+											</Link>
+										</NavigationMenuLink>
+									))}
+								</ul>
+							</NavigationMenuContent>
+						</NavigationMenuItem>
+
+						<NavigationMenuItem>
+							<div className="flex items-center">
+								{routeList.map(({ href, label }) => (
+									<NavigationMenuLink key={href} asChild>
+										<Link href={href} className="px-3 text-sm font-medium hover:text-primary transition-colors">
+											{label}
 										</Link>
 									</NavigationMenuLink>
 								))}
-							</ul>
-						</NavigationMenuContent>
-					</NavigationMenuItem>
-
-					<NavigationMenuItem>
-						{routeList.map(({ href, label }) => (
-							<NavigationMenuLink key={href} asChild>
-								<Link href={href} className="px-2">
-									{label}
-								</Link>
-							</NavigationMenuLink>
-						))}
-					</NavigationMenuItem>
-				</NavigationMenuList>
-			</NavigationMenu>
+							</div>
+						</NavigationMenuItem>
+					</NavigationMenuList>
+				</NavigationMenu>
+			</div>
 
 			<div className="hidden lg:flex items-center gap-2">
 				<LanguageToggle />

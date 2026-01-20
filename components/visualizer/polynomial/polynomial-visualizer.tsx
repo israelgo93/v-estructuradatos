@@ -26,14 +26,16 @@ export function PolynomialVisualizer({ content }: PolynomialVisualizerProps) {
 			</div>
 
 			<Tabs defaultValue="multiply" className="w-full space-y-6">
-				<TabsList className="grid w-full grid-cols-2">
-					<TabsTrigger value="multiply">
-						{t('polynomial.multiply')}
-					</TabsTrigger>
-					<TabsTrigger value="explanation">
-						{t('common.explanation')}
-					</TabsTrigger>
-				</TabsList>
+				<div className="overflow-x-auto pb-2">
+					<TabsList className="flex w-full min-w-max sm:grid sm:grid-cols-2 h-auto p-1 sm:h-10 sm:p-1">
+						<TabsTrigger value="multiply" className="flex-1">
+							{t('polynomial.multiply')}
+						</TabsTrigger>
+						<TabsTrigger value="explanation" className="flex-1">
+							{t('common.explanation')}
+						</TabsTrigger>
+					</TabsList>
+				</div>
 
 				<TabsContent value="multiply" className="space-y-6">
 					<Card className="p-6">

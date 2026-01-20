@@ -92,7 +92,7 @@ export function LinkedListDisplay({
 	const platformWidth = Math.max(totalWidth + 6, 10)
 
 	return (
-		<Card className="p-0 relative h-[600px] overflow-hidden border-2 border-primary/10 rounded-xl shadow-xl bg-gradient-to-b from-card via-card to-secondary/10">
+		<Card className="p-0 relative h-[350px] sm:h-[600px] overflow-hidden border-2 border-primary/10 rounded-xl shadow-xl bg-gradient-to-b from-card via-card to-secondary/10">
 			{message && (
 				<div className="absolute top-4 left-4 z-10 text-sm font-medium bg-background/90 backdrop-blur-sm px-4 py-2 rounded-full border shadow-lg">
 					{message}
