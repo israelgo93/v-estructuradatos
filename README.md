@@ -1,12 +1,22 @@
-# Visualizador ES
+# EstructuraDatos.org
 
-Visualizador ES (Visualizador de Estructuras de Datos) es un proyecto **open source** para aprender estructuras de datos mediante visualizaciones 3D, análisis en tiempo real y ejemplos interactivos. La interfaz funciona en español e inglés.
+EstructuraDatos.org es una organización tecnológica **sin fines de lucro** que construye recursos **open source** para el aprendizaje gratuito de programación y estructuras de datos.
+
+## Proyecto inicial: Visualizador ES
+
+Visualizador ES es la primera contribución de la organización. Permite aprender estructuras de datos mediante visualizaciones 3D, análisis en tiempo real y ejemplos interactivos. La interfaz funciona en español e inglés.
+
+## Rutas principales
+
+- Landing organizacional: `/`
+- Landing del visualizador: `/visualizador-es`
+- Aplicación interactiva: `/visualizer`
 
 ## Metodología
 
 Metodología: aprendizaje basado en práctica con simulaciones 3D y análisis en tiempo real.
 
-## Características principales
+## Características principales del Visualizador ES
 
 - Visualizaciones 3D interactivas para estructuras esenciales.
 - Aplicaciones educativas con escenarios reales.
@@ -40,8 +50,8 @@ Metodología: aprendizaje basado en práctica con simulaciones 3D y análisis en
 1. Clonar el repositorio:
 
 ```bash
-git clone https://github.com/israelgo93/v-estructuradatos.git
-cd v-estructuradatos
+git clone https://github.com/israelgo93/estructuradatos.org
+cd estructuradatos.org
 ```
 
 1. Instalar dependencias:
@@ -70,8 +80,8 @@ Las contribuciones son bienvenidas. Abre un issue para discutir cambios mayores 
 ## Créditos
 
 - Este es un proyecto educativo.
-- Creador: Ing. Israel J. Gomez, Mgtr.
-- Para la materia de Estructura de Datos.
+- Contribución al proyecto: Ing. Israel J. Gomez, Mgtr.
+- Estudiantes del 3 Nivel Paralelo C Asignatura Estructura de Datos & Docente.
 - Facultad de Ciencias de la Vida y Tecnologías - ULEAM.
 
 ## Licencia

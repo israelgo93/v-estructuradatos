@@ -36,7 +36,7 @@ export const Hero = () => {
 							</p>
 						</div>
 						<div className="flex flex-row gap-4">
-						<Link href="https://github.com/israelgo93/v-estructuradatos.git">
+						<Link href="https://github.com/israelgo93/estructuradatos.org">
 								<Button className="gap-4" variant="outline">
 									{t('landing.viewOnGithub')} <Github className="w-4 h-4" />
 								</Button>

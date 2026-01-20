@@ -1,6 +1,6 @@
-# Estado Actual del Proyecto - Visualizador de Estructuras de Datos (DS Visualizer)
+# Estado Actual del Proyecto - EstructuraDatos.org
 
-Fecha: 19 de Enero de 2026
+Fecha: 20 de Enero de 2026
 
 ## Cambios Realizados
 
@@ -98,14 +98,23 @@ Fecha: 19 de Enero de 2026
   - Message Queue, Polynomial Multiplication, Dijkstra, Computer Vision
 - Se actualizó la sección de Tech Stack con versiones actuales y descripción real del proyecto.
 
-### 7. Limpieza y Simplificación
+### 7. Nueva Landing Organizacional
+
+- Se creó una landing principal para **EstructuraDatos.org** con estilo tecnológico y minimalista.
+- Incluye secciones de misión, open source, proyectos y comunidad.
+- El visualizador ahora tiene su landing informativa en `/visualizador-es`.
+- La aplicación interactiva se mantiene en `/visualizer`.
+- El Navbar adapta el menú según la ruta (organizacional vs. visualizador).
+- Branding y enlaces internos actualizados para el nuevo repositorio `estructuradatos.org`.
+
+### 8. Limpieza y Simplificación
 
 - Se eliminaron las estructuras y aplicaciones no solicitadas:
   - Huffman Coding
   - Conversión de Infijo a Postfijo
 - Se eliminó el archivo `lib/stack-operations.ts` que dependía de código eliminado.
 
-### 8. Correcciones Técnicas
+### 9. Correcciones Técnicas
 
 - Se reemplazó `framer-motion-3d` (no existente) por `@react-spring/three`.
 - Se implementaron importaciones dinámicas para componentes 3D evitando errores de SSR.

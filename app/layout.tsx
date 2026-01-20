@@ -4,11 +4,12 @@ import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
 import { ThemeProvider } from "@/components/global/theme-provider";
 import { I18nProvider } from "@/components/global/i18n-provider";
+import { Footer } from "@/components/global/footer";
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: "Visualizador ES",
-  description: "Visualizador ES es un visualizador open source de estructuras de datos con soporte ES/EN.",
+  title: "EstructuraDatos.org",
+  description: "Organización tecnológica sin fines de lucro con recursos open source para aprender programación y estructuras de datos.",
 };
 
 export default function RootLayout({
@@ -30,6 +31,7 @@ export default function RootLayout({
 							<div className="flex-1">
 								{children}
 							</div>
+							<Footer />
 						</div>
 						<Toaster />
 					</ThemeProvider>

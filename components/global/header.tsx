@@ -57,7 +57,7 @@ export function Header() {
           <ModeToggle />
           <Button asChild size="sm" variant="ghost">
             <Link
-              href="https://github.com/israelgo93/v-estructuradatos.git"
+              href="https://github.com/israelgo93/estructuradatos.org"
               target="_blank"
               rel="noopener noreferrer"
             >

@@ -23,19 +23,45 @@ import Link from "next/link";
 import { ModeToggle } from "@/components/global/mode-toggle";
 import { LanguageToggle } from "@/components/global/language-toggle";
 import { useTranslation } from "react-i18next";
+import { usePathname } from "next/navigation";
 
 export const Navbar = () => {
 	const { t } = useTranslation();
 	const [isOpen, setIsOpen] = React.useState(false);
+	const pathname = usePathname();
+	const isVisualizerLanding = pathname.startsWith("/visualizador-es");
 
-	const routeList = [
-		{
-			href: "/visualizer",
-			label: t('common.dashboard'),
-		},
-	];
+	const routeList = isVisualizerLanding
+		? [
+			{
+				href: "/visualizer",
+				label: t('common.dashboard'),
+			},
+		]
+		: [
+			{
+				href: "/#mission",
+				label: t('orgLanding.navMission'),
+			},
+			{
+				href: "/#open-source",
+				label: t('orgLanding.navOpenSource'),
+			},
+			{
+				href: "/#projects",
+				label: t('orgLanding.navProjects'),
+			},
+			{
+				href: "/#community",
+				label: t('orgLanding.navCommunity'),
+			},
+			{
+				href: "/visualizador-es",
+				label: t('orgLanding.navProjectLink'),
+			},
+		];
 
-	const featureList = [
+	const visualizerFeatures = [
 		{
 			title: t('common.stack'),
 			description: t('landing.stackDesc'),
@@ -87,6 +113,17 @@ export const Navbar = () => {
 			url: "/visualizer/computer-vision"
 		},
 	];
+
+	const orgProjects = [
+		{
+			title: t('orgLanding.projectCardTitle'),
+			description: t('orgLanding.projectCardDescription'),
+			url: "/visualizador-es"
+		},
+	];
+
+	const menuLabel = isVisualizerLanding ? t('common.dataStructures') : t('orgLanding.navProjects');
+	const menuItems = isVisualizerLanding ? visualizerFeatures : orgProjects;
 
 	return (
 		<header className="shadow-inner bg-opacity-15 w-[90%] md:w-[70%] lg:w-[75%] lg:max-w-screen-xl top-5 mx-auto sticky border border-secondary z-40 rounded-2xl flex justify-between items-center p-2 bg-card/60 backdrop-blur-md">
@@ -150,11 +187,11 @@ export const Navbar = () => {
 				<NavigationMenuList>
 					<NavigationMenuItem>
 						<NavigationMenuTrigger className="bg-transparent">
-							{t('common.dataStructures')}
+							{menuLabel}
 						</NavigationMenuTrigger>
 						<NavigationMenuContent>
 							<ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2">
-								{featureList.map(({ title, description, url }) => (
+								{menuItems.map(({ title, description, url }) => (
 									<NavigationMenuLink key={title} asChild>
 										<Link href={url}>
 											<li key={title} className="rounded-md p-3 hover:bg-muted">
@@ -190,7 +227,7 @@ export const Navbar = () => {
 				<Button asChild size="sm" variant="ghost" aria-label="View on GitHub">
 					<Link
 						aria-label="View on GitHub"
-						href="https://github.com/israelgo93/v-estructuradatos.git"
+						href="https://github.com/israelgo93/estructuradatos.org"
 						target="_blank"
 					>
 						<Github className="size-5" />
