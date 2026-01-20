@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import type { ComponentType, SVGProps } from "react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
@@ -23,7 +24,7 @@ import {
 	Navigation,
 	Info
 } from "lucide-react"
-import { FeedbackStep, FeedbackStepType, OperationFeedback } from "./feedback-types"
+import type { FeedbackStep, FeedbackStepType, OperationFeedback } from "./feedback-types"
 
 interface OperationFeedbackProps {
 	feedback: OperationFeedback | null
@@ -32,7 +33,7 @@ interface OperationFeedbackProps {
 	className?: string
 }
 
-const stepTypeConfig: Record<FeedbackStepType, { icon: React.ElementType; color: string; bgColor: string }> = {
+const stepTypeConfig: Record<FeedbackStepType, { icon: ComponentType<SVGProps<SVGSVGElement>>; color: string; bgColor: string }> = {
 	info: { icon: Info, color: "text-blue-500", bgColor: "bg-blue-500/10" },
 	comparison: { icon: GitCompare, color: "text-yellow-500", bgColor: "bg-yellow-500/10" },
 	assignment: { icon: Variable, color: "text-purple-500", bgColor: "bg-purple-500/10" },

@@ -3,7 +3,6 @@
 import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { useTranslation } from "react-i18next"
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/badge" // I'll use actual Cards from UI later, but for now let's just use Badge if I want something small, or define my own layout. Actually I should use the real Card component.
 import { Button } from "@/components/ui/button"
 import { ChevronLeft, ChevronRight, Layers, List, Network, Database, GitBranch, Binary } from "lucide-react"
 import Link from "next/link"
