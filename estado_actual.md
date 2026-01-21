@@ -1,6 +1,6 @@
 # Estado Actual del Proyecto - EstructuraDatos.org
 
-Fecha: 20 de Enero de 2026
+Fecha: 21 de Enero de 2026
 
 ## Cambios Realizados
 
@@ -139,6 +139,58 @@ Fecha: 20 de Enero de 2026
 - Se creó `Dockerfile` orientado a despliegue en Cloud Run usando export estático.
 - Se agregó `nginx.conf` para servir `out/` en el puerto 8080.
 - Se añadió `.dockerignore` para reducir tamaño de build.
+
+### 13. Nuevo Proyecto Open Source: Pac-Man Data Lab
+
+- Se añadió el directorio `pacman-es/` como proyecto open source dentro del repositorio.
+- Se integró acceso desde la landing organizacional mediante `/pacman-es`.
+- El juego incluye animación y panel educativo con estructuras de datos (matrices 2D, colas/BFS, grafos y máquina de estados).
+
+### 14. Rediseño Visual y Educativo Completo de Pac-Man Data Lab
+
+- **Mejoras Visuales del Laberinto**:
+  - Paredes con efecto neón azul brillante y gradientes internos.
+  - Pellets amarillos con animación de glow pulsante claramente visibles.
+  - Power pellets con animación de escala y brillo intenso.
+  - Grid de fondo sutil para definir el espacio de juego.
+  - Bordes del laberinto con sombra y efecto de profundidad.
+
+- **Entidades Mejoradas**:
+  - Pac-Man con tamaño mayor (28px tiles), animación de boca fluida y efecto glow.
+  - Color cyan dinámico cuando está en modo power.
+  - Fantasmas con colores vibrantes (#ff4757, #ff6b9d, #00d2d3, #ffa502).
+  - Animación de ondulación en la base de los fantasmas.
+  - Ojos asustados y boca ondulada en modo FRIGHTENED.
+
+- **Panel Educativo Dinámico**:
+  - **Monitor de Aprendizaje**: Comentarios contextuales basados en eventos del juego.
+  - **Estado en Tiempo Real**: Posición `[x, y]`, celda `maze[y][x]`, modo fantasmas (PERSECUCIÓN/ASUSTADOS).
+  - **Concepto Destacado**: Explicaciones O(1), BFS, FSM que cambian según la acción.
+  - **Grid de Arquitectura Técnica**: Tarjetas explicativas de Matrices 2D, Algoritmo BFS, Pathfinding y Lógica FSM.
+  - **Sección "¿Cómo Funciona?"**: Explicaciones detalladas de Matrix, BFS y FSM.
+
+- **Sistema de Comentarios IA Contextuales**:
+  - Eventos detectados: pellet comido, power pellet, fantasma cerca, colisión, victoria.
+  - Actualización dinámica del concepto activo según el evento.
+  - Cursor de typing animado en el monitor de aprendizaje.
+
+- **Parámetros de Juego Optimizados para Aprendizaje**:
+  - `TILE_SIZE: 28px` - Tamaño óptimo para visibilidad educativa.
+  - `TICK_RATE: 350ms` - Velocidad lenta para observar algoritmos claramente.
+  - `POWER_DURATION: 50` - Duración extendida del modo power.
+
+- **Estilos CSS Mejorados** (`globals.css`):
+  - Clases `.wall-cell`, `.pellet`, `.power-pellet` con animaciones.
+  - `.maze-grid` con background grid y efectos de sombra.
+  - `.state-chase`, `.state-frightened` para indicadores de estado.
+  - `.concept-active` para resaltar concepto activo.
+  - Scrollbar personalizado y animación de cursor typing.
+
+- **Internacionalización Completa (ES/EN)**:
+  - Nuevas claves: `liveState`, `position`, `currentCell`, `ghostMode`, `pelletsRemaining`.
+  - Comentarios IA: `iaComments.pelletEaten`, `iaComments.powerPellet`, `iaComments.ghostClose`, etc.
+  - Conceptos destacados: `conceptMatrix`, `conceptBfs`, `conceptFsm`, `conceptQueue`.
+  - Explicaciones: `matrixExplain`, `bfsExplain`, `fsmExplain`, `howItWorks`.
 
 ## Estructura de Datos Disponibles
 

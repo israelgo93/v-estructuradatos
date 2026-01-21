@@ -6,11 +6,54 @@ EstructuraDatos.org es una organización tecnológica **sin fines de lucro** que
 
 Visualizador ES es la primera contribución de la organización. Permite aprender estructuras de datos mediante visualizaciones 3D, análisis en tiempo real y ejemplos interactivos. La interfaz funciona en español e inglés.
 
+## Nuevo proyecto: Pac-Man Data Lab
+
+Pac-Man Data Lab es una experiencia interactiva diseñada para enseñar conceptos fundamentales de ciencias de la computación a través de un videojuego clásico. Juega mientras aprendes cómo funcionan los algoritmos en tiempo real.
+
+### Características Visuales
+
+| Elemento | Descripción |
+|----------|-------------|
+| **Laberinto Neón** | Paredes con efecto de brillo azul y gradientes |
+| **Pellets Brillantes** | Puntos amarillos con animación de glow pulsante |
+| **Power Pellets** | Esferas con animación de escala y brillo intenso |
+| **Pac-Man Dinámico** | Color cyan en modo power, animación de boca fluida |
+| **Fantasmas Animados** | Colores vibrantes, ondulación y ojos expresivos |
+
+### Panel Educativo Interactivo
+
+- **Monitor de Aprendizaje**: Comentarios contextuales que explican cada acción del juego
+- **Estado en Tiempo Real**: Posición `[x, y]`, celda actual `maze[y][x]`, modo de fantasmas
+- **Concepto Destacado**: Explicaciones O(1), BFS y FSM que cambian según los eventos
+- **Arquitectura Técnica**: Tarjetas explicativas de Matrices 2D, BFS, Pathfinding y FSM
+
+### Estructuras de Datos en Acción
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│  MATRICES 2D          │  El laberinto es number[][] donde  │
+│  ═══════════          │  0=vacío, 1=pared, 2=pellet        │
+├─────────────────────────────────────────────────────────────┤
+│  ALGORITMO BFS        │  Los fantasmas calculan el camino  │
+│  ════════════         │  más corto usando cola + visitados │
+├─────────────────────────────────────────────────────────────┤
+│  LÓGICA FSM           │  Estados: CHASE, SCATTER,          │
+│  ══════════           │  FRIGHTENED controlan la IA        │
+└─────────────────────────────────────────────────────────────┘
+```
+
+### Parámetros Educativos
+
+- **Velocidad**: 350ms por tick (lento para observar algoritmos)
+- **Modo Power**: 50 ticks de duración extendida
+- **Tamaño**: 28px por tile para mejor visibilidad
+
 ## Rutas principales
 
 - Landing organizacional: `/`
 - Landing del visualizador: `/visualizador-es`
 - Aplicación interactiva: `/visualizer`
+- Juego Pac-Man: `/pacman-es`
 
 ## Metodología
 

@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pac-Man Data Lab | Estructuras de Datos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+      body {
+        margin: 0;
+        background-color: #050505;
+        color: #fff;
+        font-family: 'Inter', sans-serif;
+        overflow-x: hidden;
+      }
+      .font-retro {
+        font-family: 'Press Start 2P', cursive;
+      }
+      .smooth-move {
+        transition: all 0.15s linear;
+      }
+      .pacman-body {
+        position: relative;
+        border-radius: 9999px;
+        overflow: hidden;
+        display: block;
+      }
+      .pacman-eye {
+        position: absolute;
+        background: #0a0a0c;
+        border-radius: 9999px;
+      }
+      .pacman-mouth {
+        position: absolute;
+        right: -2px;
+        top: 50%;
+        transform-origin: left center;
+        background: #0a0a0c;
+        clip-path: polygon(0 0, 100% 50%, 0 100%);
+        animation: pacman-bite 0.18s infinite ease-in-out;
+      }
+      @keyframes pacman-bite {
+        0%, 100% { transform: translateY(-50%) rotate(15deg); }
+        50% { transform: translateY(-50%) rotate(-15deg); }
+      }
+      .glow-cyan { box-shadow: 0 0 15px rgba(34, 211, 238, 0.4); }
+      ::-webkit-scrollbar { width: 8px; }
+      ::-webkit-scrollbar-track { background: #0a0a0c; }
+      ::-webkit-scrollbar-thumb { background: #22d3ee; border-radius: 4px; }
+    </style>
+    <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom": "https://esm.sh/react-dom@^19.2.3",
+    "@google/genai": "https://esm.sh/@google/genai@^1.37.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/"
+  }
+}
+</script>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>

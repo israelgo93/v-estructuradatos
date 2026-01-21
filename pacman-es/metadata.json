@@ -1,0 +1,5 @@
+{
+  "name": "Pac-Man Data Lab",
+  "description": "Juego educativo retro construido con React. Usa matrices 2D, colas y BFS para el laberinto y la IA de fantasmas, con animaciones por ticks y comentarios opcionales.",
+  "requestFramePermissions": []
+}
