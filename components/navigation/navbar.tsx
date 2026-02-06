@@ -35,7 +35,7 @@ export const Navbar = () => {
 	const routeList = isVisualizerLanding
 		? [
 			{
-				href: "/visualizer",
+				href: "/visualizer/",
 				label: t('common.dashboard'),
 			},
 		]
@@ -58,52 +58,52 @@ export const Navbar = () => {
 		{
 			title: t('common.stack'),
 			description: t('landing.stackDesc'),
-			url: "/visualizer/stack"
+			url: "/visualizer/stack/"
 		},
 		{
 			title: t('common.queue'),
 			description: t('landing.queueDesc'),
-			url: "/visualizer/queue"
+			url: "/visualizer/queue/"
 		},
 		{
 			title: t('common.linkedList'),
 			description: t('landing.linkedListDesc'),
-			url: "/visualizer/linked-list"
+			url: "/visualizer/linked-list/"
 		},
 		{
 			title: t('common.binaryTree'),
 			description: t('landing.bstDesc'),
-			url: "/visualizer/binary-tree"
+			url: "/visualizer/binary-tree/"
 		},
 		{
 			title: t('common.avlTree'),
 			description: t('landing.avlDesc'),
-			url: "/visualizer/avl-tree"
+			url: "/visualizer/avl-tree/"
 		},
 		{
 			title: t('common.heap'),
 			description: t('landing.heapDesc'),
-			url: "/visualizer/heap"
+			url: "/visualizer/heap/"
 		},
 		{
 			title: t('common.messageQueue'),
 			description: t('landing.messageQueueDesc'),
-			url: "/visualizer/queue-applications"
+			url: "/visualizer/queue-applications/"
 		},
 		{
 			title: t('common.polynomial'),
 			description: t('landing.polynomialDesc'),
-			url: "/visualizer/polynomial"
+			url: "/visualizer/polynomial/"
 		},
 		{
 			title: t('common.dijkstra'),
 			description: t('landing.dijkstraDesc'),
-			url: "/visualizer/dijkstra"
+			url: "/visualizer/dijkstra/"
 		},
 		{
 			title: t('common.computerVision'),
 			description: t('landing.computerVisionDesc'),
-			url: "/visualizer/computer-vision"
+			url: "/visualizer/computer-vision/"
 		},
 	];
 
@@ -111,12 +111,12 @@ export const Navbar = () => {
 		{
 			title: t('orgLanding.projectCardTitle'),
 			description: t('orgLanding.projectCardDescription'),
-			url: "/visualizador-es"
+			url: "/visualizador-es/"
 		},
 		{
 			title: t('orgLanding.pacmanCardTitle'),
 			description: t('orgLanding.pacmanCardDescription'),
-			url: "/pacman-es"
+			url: "/pacman-es/"
 		},
 	];
 

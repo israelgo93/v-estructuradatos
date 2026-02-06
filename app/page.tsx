@@ -65,7 +65,7 @@ export default function Home() {
 							</motion.p>
 							
 							<motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 mt-4">
-								<Link href="/visualizador-es">
+								<Link href="/visualizador-es/">
 									<Button size="lg" className="gap-2 rounded-full px-8 h-14 text-lg shadow-xl shadow-primary/20 transition-all hover:scale-105 active:scale-95">
 										{t('orgLanding.heroPrimaryCta')} <MoveRight className="w-5 h-5" />
 									</Button>
@@ -205,7 +205,7 @@ export default function Home() {
 													<Github className="w-4 h-4" /> {t('orgLanding.openSourceCta')}
 												</Button>
 											</Link>
-											<Link href="/about">
+											<Link href="/about/">
 												<Button variant="ghost" className="gap-2 rounded-full px-6">
 													{t('orgLanding.aboutCta')} <MoveRight className="w-4 h-4" />
 												</Button>

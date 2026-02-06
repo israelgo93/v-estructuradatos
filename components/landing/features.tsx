@@ -24,61 +24,61 @@ export const Features = () => {
 			title: t('common.stack'),
 			description: t('landing.stackDesc'),
 			image: "/ds-st.png",
-			url: "/visualizer/stack"
+			url: "/visualizer/stack/"
 		},
 		{
 			title: t('common.queue'),
 			description: t('landing.queueDesc'),
 			image: "/ds-q.png",
-			url: "/visualizer/queue"
+			url: "/visualizer/queue/"
 		},
 		{
 			title: t('common.linkedList'),
 			description: t('landing.linkedListDesc'),
 			image: "/ds-ll.png",
-			url: "/visualizer/linked-list"
+			url: "/visualizer/linked-list/"
 		},
 		{
 			title: t('common.binaryTree'),
 			description: t('landing.bstDesc'),
 			image: "/ds-bst.png",
-			url: "/visualizer/binary-tree"
+			url: "/visualizer/binary-tree/"
 		},
 		{
 			title: t('common.avlTree'),
 			description: t('landing.avlDesc'),
 			image: "/ds-avl.png",
-			url: "/visualizer/avl-tree"
+			url: "/visualizer/avl-tree/"
 		},
 		{
 			title: t('common.heap'),
 			description: t('landing.heapDesc'),
 			image: "/ds-heap.png",
-			url: "/visualizer/heap"
+			url: "/visualizer/heap/"
 		},
 		{
 			title: t('common.messageQueue'),
 			description: t('landing.messageQueueDesc'),
 			image: "/ds-mq.png",
-			url: "/visualizer/queue-applications"
+			url: "/visualizer/queue-applications/"
 		},
 		{
 			title: t('common.polynomial'),
 			description: t('landing.polynomialDesc'),
 			image: "/ds-polynomial-multiplication.png",
-			url: "/visualizer/polynomial"
+			url: "/visualizer/polynomial/"
 		},
 		{
 			title: t('common.dijkstra'),
 			description: t('landing.dijkstraDesc'),
 			image: "/ds-dijkstra.png",
-			url: "/visualizer/dijkstra"
+			url: "/visualizer/dijkstra/"
 		},
 		{
 			title: t('common.computerVision'),
 			description: t('landing.computerVisionDesc'),
 			image: "/ds-st.png",
-			url: "/visualizer/computer-vision"
+			url: "/visualizer/computer-vision/"
 		},
 	];
 

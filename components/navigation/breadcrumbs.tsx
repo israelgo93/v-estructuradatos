@@ -16,55 +16,55 @@ import { usePathname } from "next/navigation"
 const routes = {
   "/": {
     name: "Home",
-    path: "/home",
+    path: "/",
   },
   "/visualizer": {
     name: "Visualizer",
-    path: "/visualizer",
+    path: "/visualizer/",
   },
   "/visualizer/stack": {
     name: "Stack",
-    path: "/visualizer/stack",
+    path: "/visualizer/stack/",
   },
   "/visualizer/queue": {
     name: "Queue",
-    path: "/visualizer/queue",
+    path: "/visualizer/queue/",
   },
   "/visualizer/stack-applications": {
     name: "Infix to Postfix",
-    path: "/visualizer/stack-applications",
+    path: "/visualizer/stack-applications/",
   },
   "/visualizer/queue-applications": {
     name: "Message Queue",
-    path: "/visualizer/queue-applications",
+    path: "/visualizer/queue-applications/",
   },
   "/visualizer/linked-list": {
     name: "Linked List",
-    path: "/visualizer/linked-list",
+    path: "/visualizer/linked-list/",
   },
   "/visualizer/polynomial": {
     name: "Polynomial Multiplication",
-    path: "/visualizer/polynomial",
+    path: "/visualizer/polynomial/",
   },
   "/visualizer/binary-tree": {
     name: "Binary Tree",
-    path: "/visualizer/binary-tree",
+    path: "/visualizer/binary-tree/",
   },
   "/visualizer/avl-tree": {
     name: "AVL Tree",
-    path: "/visualizer/avl-tree",
+    path: "/visualizer/avl-tree/",
   },
   "/visualizer/heap": {
     name: "Heap",
-    path: "/visualizer/heap",
+    path: "/visualizer/heap/",
   },
   "/visualizer/huffman": {
     name: "Huffman Coding",
-    path: "/visualizer/huffman",
+    path: "/visualizer/huffman/",
   },
   "/visualizer/dijkstra": {
     name: "Dijkstra's Algorithm",
-    path: "/visualizer/dijkstra",
+    path: "/visualizer/dijkstra/",
   },
 }
 

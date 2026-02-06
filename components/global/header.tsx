@@ -22,7 +22,7 @@ export function Header() {
   const navigationItems = [
     {
       title: t('common.dataStructures'),
-      href: "/visualizer",
+      href: "/visualizer/",
       description: "Interactive visualizations of common data structures"
     },
   ]
