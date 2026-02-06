@@ -22,7 +22,7 @@ export function AppSidebar() {
 		},
 		{
 			title: t('common.dataStructures'),
-			url: "/visualizer",
+			url: "/visualizer/",
 			icon: Database,
 		},
 	]
@@ -30,37 +30,37 @@ export function AppSidebar() {
 	const dataStructures = [
 		{
 			name: t('common.stack'),
-			url: "/visualizer/stack",
+			url: "/visualizer/stack/",
 			icon: SquareStack,
 			description: t('stack.description'),
 		},  
 		{
 			name: t('common.queue'),
-			url: "/visualizer/queue",
+			url: "/visualizer/queue/",
 			icon: SquareChevronLeft,
 			description: t('queue.description'),
 		},  
 		{
 			name: t('common.linkedList'),
-			url: "/visualizer/linked-list",
+			url: "/visualizer/linked-list/",
 			icon: List,
 			description: t('linkedList.description'),
 		},
 		{
 			name: t('common.binaryTree'),
-			url: "/visualizer/binary-tree",
+			url: "/visualizer/binary-tree/",
 			icon: Binary,
 			description: t('binaryTree.description'),
 		},
 		{
 			name: t('common.avlTree'),
-			url: "/visualizer/avl-tree",
+			url: "/visualizer/avl-tree/",
 			icon: TreePine,
 			description: t('avlTree.description'),
 		},
 		{
 			name: t('common.heap'),
-			url: "/visualizer/heap",
+			url: "/visualizer/heap/",
 			icon: Database,
 			description: t('heap.description'),
 		},
@@ -69,25 +69,25 @@ export function AppSidebar() {
 	const applications = [
 		{
 			name: t('common.messageQueue'),
-			url: "/visualizer/queue-applications",
+			url: "/visualizer/queue-applications/",
 			icon: MessageSquare,
 			description: t('landing.messageQueueDesc'),
 		},
 		{
 			name: t('common.polynomial'),
-			url: "/visualizer/polynomial",
+			url: "/visualizer/polynomial/",
 			icon: X,
 			description: t('landing.polynomialDesc'),
 		},
 		{
 			name: t('common.dijkstra'),
-			url: "/visualizer/dijkstra",
+			url: "/visualizer/dijkstra/",
 			icon: ArrowRightLeft,
 			description: t('dijkstra.description'),
 		},
 		{
 			name: t('common.computerVision'),
-			url: "/visualizer/computer-vision",
+			url: "/visualizer/computer-vision/",
 			icon: Camera,
 			description: t('landing.computerVisionDesc'),
 		},

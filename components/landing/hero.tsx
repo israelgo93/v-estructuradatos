@@ -41,7 +41,7 @@ export const Hero = () => {
 									{t('landing.viewOnGithub')} <Github className="w-4 h-4" />
 								</Button>
 							</Link>
-							<Link href="/visualizer">
+							<Link href="/visualizer/">
 								<RainbowButton className="w-full">
 									{t('landing.goToVisualizer')} <MoveRight className="hidden sm:block w-4 h-4" />
 								</RainbowButton>

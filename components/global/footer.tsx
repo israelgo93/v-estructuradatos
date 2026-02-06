@@ -17,7 +17,7 @@ export function Footer() {
 
 				<div className="flex flex-col items-center md:items-end gap-3">
 					<Link 
-						href="/about" 
+						href="/about/" 
 						className="text-sm font-medium hover:text-primary transition-colors hover:underline underline-offset-4"
 					>
 						{t('footer.about', 'Acerca de')}

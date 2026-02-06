@@ -20,7 +20,7 @@ export const CTA = () => {
 							{t('landing.ctaDescription')}
 						</p>
 						<div className="flex flex-col sm:flex-row gap-4">
-							<Link href="/visualizer">
+							<Link href="/visualizer/">
 								<RainbowButton className="gap-4">
 									{t('landing.ctaButton')} <MoveRight className="w-4 h-4 ml-2" />
 								</RainbowButton>
